@@ -5,6 +5,7 @@ import { Parser } from 'xml2js';
 import libxmljs from 'libxmljs';
 import { PrismaClient } from '@prisma/client';
 import fetch from 'node-fetch';
+import fs from 'fs/promises';
 
 import { validation, error, success } from '../../utils/responseApi.js';
 import { formatErrors } from '../../utils/errors.js';
