@@ -814,12 +814,10 @@ async function getIOFXmlSchema() {
   with a header of "Content-Type: application/xml". If successful, it returns the body of the response as text. 
   If an error occurs, it logs an error message to the console. */
   try {
-    const response = await fetch(IOF_XML_SCHEMA, {
-      method: 'get',
-      headers: { 'Content-Type': 'application/xml' },
+    const data = await fs.readFile('src/modules/upload/IOF.xsd', {
+      encoding: 'utf8',
     });
-    const body = await response.text();
-    return body;
+    return data;
   } catch (err) {
     console.error('Problem to load IOF XML schema: ', err.message);
   }
